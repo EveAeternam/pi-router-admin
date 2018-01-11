@@ -7,7 +7,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>PiRouter | Home</title>
+  <title>PiRouter | Extras</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
@@ -185,12 +185,12 @@ desired effect
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">BASIC</li>
         <!-- Optionally, you can add icons to the links -->
-			<li class="active"><a href="#"><i class="fa fa-home"></i> <span>HOME</span></a></li>
+			<li><a href="#"><i class="fa fa-home"></i> <span>HOME</span></a></li>
 			<li><a href="#"><i class="fa fa-plug"></i> <span>INTERNET</span></a></li>
 			<li><a href="#"><i class="fa fa-wifi"></i> <span>WIRELESS</span></a></li>
 			<li><a href="#"><i class="fa fa-laptop"></i> <span>ATTACHED DEVICES</span></a></li>
 			<li><a href="#"><i class="fa fa-child"></i> <span>PARENTAL CONTROLS</span></a></li>
-			<li><a href="#"><i class="fa fa-plus"></i> <span>EXTRAS</span></a></li>
+			<li class="active"><a href="#"><i class="fa fa-plus"></i> <span>EXTRAS</span></a></li>
 			<li><a href="#"><i class="fa fa-wrench"></i> <span>HARDWARE</span></a></li>
 
 		  <li class="header">ADVANCED <i>(Coming Soon)</i></li>
@@ -215,13 +215,10 @@ desired effect
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1>
-        HOMEPAGE
-        <small>Basic</small>
-      </h1>
+      <h1> Extras &nbsp; &nbsp; &nbsp; &nbsp; <small>Extras available</small></h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Basic</a></li>
-        <li class="active">Home</li>
+        <li class="active">Extras</li>
       </ol>
     </section>
 
@@ -231,101 +228,81 @@ desired effect
       	<div class="row">
 			<div class="box">
 				<div class="box-header with-border">
-				  <h3 class="box-title"><em class="fa fa-dashboard"></em> General Dashboard</h3>
+				  <h3 class="box-title"><em class="fa fa-plus"></em> Installed Extras</h3>
 				</div>
 				<div class="box-body bg-gray">
-					  <!-- INTERNET -->
 					<div class="col-md-3 col-sm-6 col-xs-12">
 					  <a href="#"><div class="info-box">
-						<span class="info-box-icon bg-blue-gradient"><i class="fa fa-plug"></i></span>
+						<span class="info-box-icon bg-purple-gradient"><i class="fa fa-plug"></i></span>
 
 						<div class="info-box-content">
-							<span class="info-box-number">INTERNET</span>
-							<span class="info-box-text">STATUS: <strong>GOOD</strong></span>
-							<span class="info-box-more">Via Ethernet (BRIDGE)</span>
+							<span class="info-box-number">PhpBB</span>
+							<span class="info-box-text">STATUS: <strong>INSTALLED</strong></span>
+							<span class="info-box-text">192.168.1.1/forum</span>
 						</div>
-						  </div></a>
+						 </div></a>
 					</div>
-					<!-- WIRELESS -->
-					<a href="#"><div class="col-md-3 col-sm-6 col-xs-12">
-					  <div class="info-box">
-						<span class="info-box-icon bg-purple-gradient"><i class="fa fa-wifi"></i></span>
+					<div class="col-md-3 col-sm-6 col-xs-12">
+					  <a href="#"><div class="info-box">
+						<span class="info-box-icon bg-purple-gradient"><i class="fa fa-plug"></i></span>
 
 						<div class="info-box-content">
-							<span class="info-box-number">WIRELESS</span>
-							<span class="info-box-text">SSID: <strong>PiRouter</strong></span>
-							<span class="info-box-text">Password: <strong>123456789</strong></span>
+							<span class="info-box-number">TravianZ</span>
+							<span class="info-box-text">STATUS: <strong>INSTALLED</strong></span>
+							<span class="info-box-text">192.168.1.1/game</span>
 						</div>
-					  </div>
-					</div></a>
-					<!-- DEVICES -->
-					<a href="#"><div class="col-md-3 col-sm-6 col-xs-12">
-					  <div class="info-box bg-gray-light">
-						<span class="info-box-icon bg-maroon-gradient"><i class="fa fa-laptop"></i></span>
-
-						<div class="info-box-content">
-							<span class="info-box-number">ATTACHED DEVICES</span>
-							<span class="info-box-text">Number of Devices: <strong>1</strong></span>
-						</div>
-					  </div>
-					</div></a>
-					<!-- PARENTAL -->
-					<a href="#"><div class="col-md-3 col-sm-6 col-xs-12">
-					  <div class="info-box">
-						<span class="info-box-icon bg-yellow-gradient"><i class="fa fa-child"></i></span>
-
-						<div class="info-box-content">
-							<span class="info-box-number">PARENTAL CONTROL</span>
-							<span class="info-box-text">STATUS: <strong>DISABLED</strong></span>
-						</div>
-					  </div>
-					</div></a>
-					<!-- HARDWARE -->
-					<a href="#"><div class="col-md-3 col-sm-6 col-xs-12">
-					  <div class="info-box">
-						<span class="info-box-icon bg-green-gradient"><i class="fa fa-wrench"></i></span>
-
-						<div class="info-box-content">
-							<span class="info-box-number">HARDWARE</span>
-							<span class="info-box-text">Display: <strong>NONE</strong></span>
-						</div>
-					  </div>
-					</div></a>
-					<!-- RPI -->
-					<a href="#"><div class="col-md-3 col-sm-6 col-xs-12">
-					  <div class="info-box">
-						  <span class="info-box-icon bg-red-gradient"><img src="dist/img/raspberry.svg" height="60"></img></span>
-
-						<div class="info-box-content">
-							<span class="info-box-number">RASPBERRY PI</span>
-							<span class="info-box-text">SSH: <strong>ENABLED</strong></span>
-						</div>
-					  </div>
-					</div></a>
+						 </div></a>
+					</div>
 				</div>
 		  </div>
 		</div>
 		
-		<!--<div class="row">
+		
+		
+		<div class="row">
 			<div class="box">
-				<div class="box-header with-border">
-				  <h3 class="box-title"><em class="fa fa-plus"></em> Title</h3>
+        <div class="box-header with-border">
+          <h3 class="box-title"><em class="fa fa-stop-circle"></em> Available Extras</h3>
 
-				  <div class="box-tools pull-right">
-					<button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
-					  <i class="fa fa-minus"></i></button>
-					<button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
-					  <i class="fa fa-times"></i></button>
-				  </div>
-				</div>
-				<div class="box-body bg-gray">
-				  Start creating your amazing application!
-				</div>
-				<div class="box-footer">
-				  Footer
-				</div>
-		  </div>
-		</div>-->
+          <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
+              <i class="fa fa-minus"></i></button>
+          </div>
+        </div>
+        <div class="box-body">
+          <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Type</th>
+                  <th>Link/Git</th>
+                  <th>Version</th>
+				  <th>Size</th>
+				  <th>Availability</th>
+                  <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td>PhpBB</td>
+                  <td>Forum</td>
+                  <td><a href="#">http://www.github.io</a></td>
+                  <td>1.0</td>
+				  <td>12.34 Mb</td>
+				  <td>Downloaded/Installed/NA</td>
+                  <td>
+					  	<div class="btn-group">
+						  <button type="button" class="btn btn-info"><em class="fa fa-download"></em> Download </button>
+						  <button type="button" class="btn btn-success"><em class="fa fa-plus"></em> Install </button>
+						  <button type="button" class="btn btn-danger"><em class="fa fa-trash"></em> Uninstall </button>
+						</div>
+				  </td>
+                </tr>
+                </tfoot>
+          </table>
+        </div>
+      </div>
+		</div>
 
     </section>
     <!-- /.content -->
