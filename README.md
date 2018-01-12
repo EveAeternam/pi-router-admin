@@ -5,24 +5,24 @@ Pages are not functional yet, links are still missing.
 ![Image](docs/PiAdmin.png)
 
 ### Internet Configuration
-![Image](docs/PiInternet.png)
+![Image](docs/PiInternet.PNG)
 
 ### Wireless Configuration
-![Image](docs/PiWireless.png)
+![Image](docs/PiWireless.PNG)
 
 ### Attached Devices
-![Image](docs/PiDevices.png)
+![Image](docs/PiDevices.PNG)
 
 ### Parental Controls / Website Blacklist
-![Image](docs/PiParental.png)
+![Image](docs/PiParental.PNG)
 
 ### Extras
-![Image](docs/PiExtras.png)
+![Image](docs/PiExtras.PNG)
 
 ### Hardware
-![Image](docs/PiHardware.png)
+![Image](docs/PiHardware.PNG)
 
 ## Changelog
 
 ### v0.1 - 1/10/2018
-Added all the pages without functionality
+Added all the pages without functionality using AdminLTE
