@@ -26,3 +26,5 @@ Pages are not functional yet, links are still missing.
 
 ### v0.1 - 1/10/2018
 Added all the pages without functionality using AdminLTE
+
+## Features to come
