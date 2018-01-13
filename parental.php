@@ -64,17 +64,17 @@
             <!-- Menu Toggle Button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <!-- The user image in the navbar-->
-              <img src="dist/img/user3-128x128.jpg" class="user-image" alt="User Image">
+              <img src="dist/usr/<?php echo $pic; ?>" class="user-image" alt="User Image">
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
-              <span class="hidden-xs">Administrator</span>
+              <span class="hidden-xs"><?php echo $fullname; ?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
               <li class="user-header">
-                <img src="dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">-
+                <img src="dist/usr/<?php echo $pic; ?>" class="img-circle" alt="User Image">-
 
                 <p>
-                  Administrator
+                  <?php echo $fullname; ?>
                   <small>Firmware Version 0.1<br>(Evangeline Archer, January 18)</small>
                 </p>
               </li>
@@ -118,10 +118,10 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="<?php echo 'dist/usr/default.png'; ?>" class="img-circle" alt="User Image">
+          <img src="<?php echo 'dist/usr/' . $pic; ?>" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p><?php echo 'Administrator'; ?></p>
+          <p><?php echo $fullname; ?></p>
           <!-- Status -->
           	<a href="#"><?php include('dist/php/check-online.php'); ?></a>
 			<a href="#"><?php echo '<i class="fa fa-circle text-success"></i> PHP Online'; ?></a>
