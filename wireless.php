@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<!--
-This is a starter template page. Use this page to start your new project from
-scratch. This page gets rid of all links and provides the needed markup only.
--->
 <html>
 <head>
   <meta charset="utf-8">
@@ -160,12 +156,13 @@ desired effect
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
+          <img src="<?php echo 'dist/usr/default.png'; ?>" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Administrator</p>
+          <p><?php echo 'Administrator'; ?></p>
           <!-- Status -->
-          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+          	<a href="#"><?php include('dist/php/check-online.php'); ?></a>
+			<a href="#"><?php echo '<i class="fa fa-circle text-success"></i> PHP Online'; ?></a>
         </div>
       </div>
 

@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<!--
-This is a starter template page. Use this page to start your new project from
-scratch. This page gets rid of all links and provides the needed markup only.
--->
 <html>
 <head>
   <meta charset="utf-8">
@@ -160,12 +156,13 @@ desired effect
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
+          <img src="<?php echo 'dist/usr/default.png'; ?>" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Administrator</p>
+          <p><?php echo 'Administrator'; ?></p>
           <!-- Status -->
-          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+          	<a href="#"><?php include('dist/php/check-online.php'); ?></a>
+			<a href="#"><?php echo '<i class="fa fa-circle text-success"></i> PHP Online'; ?></a>
         </div>
       </div>
 
@@ -185,13 +182,13 @@ desired effect
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">BASIC</li>
         <!-- Optionally, you can add icons to the links -->
-			<li><a href="#"><i class="fa fa-home"></i> <span>HOME</span></a></li>
+			<li><a href="index.php"><i class="fa fa-home"></i> <span>HOME</span></a></li>
 			<li class="active"><a href="#"><i class="fa fa-plug"></i> <span>INTERNET</span></a></li>
-			<li><a href="#"><i class="fa fa-wifi"></i> <span>WIRELESS</span></a></li>
-			<li><a href="#"><i class="fa fa-laptop"></i> <span>ATTACHED DEVICES</span></a></li>
-			<li><a href="#"><i class="fa fa-child"></i> <span>PARENTAL CONTROLS</span></a></li>
-			<li><a href="#"><i class="fa fa-plus"></i> <span>EXTRAS</span></a></li>
-			<li><a href="#"><i class="fa fa-wrench"></i> <span>HARDWARE</span></a></li>
+			<li><a href="wireless.php"><i class="fa fa-wifi"></i> <span>WIRELESS</span></a></li>
+			<li><a href="devices.php"><i class="fa fa-laptop"></i> <span>ATTACHED DEVICES</span></a></li>
+			<li><a href="parental.php"><i class="fa fa-child"></i> <span>PARENTAL CONTROLS</span></a></li>
+			<li><a href="extras.php"><i class="fa fa-plus"></i> <span>EXTRAS</span></a></li>
+			<li><a href="hardware.php"><i class="fa fa-wrench"></i> <span>HARDWARE</span></a></li>
 
 		  <li class="header">ADVANCED <i>(Coming Soon)</i></li>
 		  <li class="treeview">
@@ -301,18 +298,12 @@ desired effect
 				  
                   <label for="inputEmail3" class="col-sm-2 control-label">IP Address</label>
                   <div class="row">
-					<div class="col-xs-2 col-lg-1">
-					  <input type="text" class="form-control" id="ip1" placeholder="000">
-					</div>
-					<div class="col-xs-2 col-lg-1">
-					  <input type="text" class="form-control" placeholder="000">
-					</div>
-					<div class="col-xs-2 col-lg-1">
-					  <input type="text" class="form-control" placeholder="000">
-					</div>
-					<div class="col-xs-2 col-lg-1">
-					  <input type="text" class="form-control" placeholder="000">
-					</div>
+					  	<div class="col-sm-4 input-group">
+						  <div class="input-group-addon">
+							<i class="fa fa-laptop"></i>
+						  </div>
+						  <input type="text" class="form-control" data-inputmask="'alias': 'ip'" data-mask>
+						</div>
 				  </div>
 				  
 				  <label for="inputEmail3" class="col-sm-2 control-label">IP Subnet Mask</label>
@@ -553,7 +544,19 @@ desired effect
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- AdminLTE App -->
 <script src="dist/js/adminlte.min.js"></script>
-
+<!-- Select2 -->
+<script src="bower_components/select2/dist/js/select2.full.min.js"></script>
+<!-- InputMask -->
+<script src="plugins/input-mask/jquery.inputmask.js"></script>
+<script src="plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+<script src="plugins/input-mask/jquery.inputmask.extensions.js"></script>
+<!-- SlimScroll -->
+<script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<!-- iCheck 1.0.1 -->
+<script src="plugins/iCheck/icheck.min.js"></script>
+<!-- FastClick -->
+<script src="bower_components/fastclick/lib/fastclick.js"></script>
+	
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
      user experience. -->

@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<!--
-This is a starter template page. Use this page to start your new project from
-scratch. This page gets rid of all links and provides the needed markup only.
--->
 <html>
 <head>
   <meta charset="utf-8">
@@ -160,12 +156,13 @@ desired effect
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
+          <img src="<?php echo 'dist/usr/default.png'; ?>" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Administrator</p>
+          <p><?php echo 'Administrator'; ?></p>
           <!-- Status -->
-          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+          	<a href="#"><?php include('dist/php/check-online.php'); ?></a>
+			<a href="#"><?php echo '<i class="fa fa-circle text-success"></i> PHP Online'; ?></a>
         </div>
       </div>
 
@@ -186,12 +183,12 @@ desired effect
         <li class="header">BASIC</li>
         <!-- Optionally, you can add icons to the links -->
 			<li class="active"><a href="#"><i class="fa fa-home"></i> <span>HOME</span></a></li>
-			<li><a href="#"><i class="fa fa-plug"></i> <span>INTERNET</span></a></li>
-			<li><a href="#"><i class="fa fa-wifi"></i> <span>WIRELESS</span></a></li>
-			<li><a href="#"><i class="fa fa-laptop"></i> <span>ATTACHED DEVICES</span></a></li>
-			<li><a href="#"><i class="fa fa-child"></i> <span>PARENTAL CONTROLS</span></a></li>
-			<li><a href="#"><i class="fa fa-plus"></i> <span>EXTRAS</span></a></li>
-			<li><a href="#"><i class="fa fa-wrench"></i> <span>HARDWARE</span></a></li>
+			<li><a href="internet.php"><i class="fa fa-plug"></i> <span>INTERNET</span></a></li>
+			<li><a href="wireless.php"><i class="fa fa-wifi"></i> <span>WIRELESS</span></a></li>
+			<li><a href="devices.php"><i class="fa fa-laptop"></i> <span>ATTACHED DEVICES</span></a></li>
+			<li><a href="parental.php"><i class="fa fa-child"></i> <span>PARENTAL CONTROLS</span></a></li>
+			<li><a href="extras.php"><i class="fa fa-plus"></i> <span>EXTRAS</span></a></li>
+			<li><a href="hardware.php"><i class="fa fa-wrench"></i> <span>HARDWARE</span></a></li>
 
 		  <li class="header">ADVANCED <i>(Coming Soon)</i></li>
 		  <li class="treeview">
