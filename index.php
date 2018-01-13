@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<?php 
+	include("dist/php/get-admin-data.php");
+	include("dist/php/get-router-status.php");
+?>
 <html>
 <head>
   <meta charset="utf-8">
@@ -156,10 +160,10 @@ desired effect
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="<?php echo 'dist/usr/default.png'; ?>" class="img-circle" alt="User Image">
+          <img src="<?php echo 'dist/usr/' . $pic; ?>" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p><?php echo 'Administrator'; ?></p>
+          <p><?php echo $fullname; ?></p>
           <!-- Status -->
           	<a href="#"><?php include('dist/php/check-online.php'); ?></a>
 			<a href="#"><?php echo '<i class="fa fa-circle text-success"></i> PHP Online'; ?></a>
@@ -191,7 +195,7 @@ desired effect
 			<li><a href="hardware.php"><i class="fa fa-wrench"></i> <span>HARDWARE</span></a></li>
 
 		  <li class="header">ADVANCED <i>(Coming Soon)</i></li>
-		  <li class="treeview">
+		  <!--<li class="treeview">
           <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
@@ -201,7 +205,7 @@ desired effect
             <li><a href="#">Link in level 2</a></li>
             <li><a href="#">Link in level 2</a></li>
           </ul>
-        </li>
+        </li>-->
       </ul>
       <!-- /.sidebar-menu -->
     </section>
@@ -232,8 +236,8 @@ desired effect
 				</div>
 				<div class="box-body bg-gray">
 					  <!-- INTERNET -->
-					<div class="col-md-3 col-sm-6 col-xs-12">
-					  <a href="#"><div class="info-box">
+					<a href="#"><div class="col-md-3 col-sm-6 col-xs-12">
+					  <div class="info-box">
 						<span class="info-box-icon bg-blue-gradient"><i class="fa fa-plug"></i></span>
 
 						<div class="info-box-content">
@@ -241,8 +245,8 @@ desired effect
 							<span class="info-box-text">STATUS: <strong>GOOD</strong></span>
 							<span class="info-box-more">Via Ethernet (BRIDGE)</span>
 						</div>
-						  </div></a>
-					</div>
+						  </div>
+					</div></a>
 					<!-- WIRELESS -->
 					<a href="#"><div class="col-md-3 col-sm-6 col-xs-12">
 					  <div class="info-box">
@@ -250,8 +254,8 @@ desired effect
 
 						<div class="info-box-content">
 							<span class="info-box-number">WIRELESS</span>
-							<span class="info-box-text">SSID: <strong>PiRouter</strong></span>
-							<span class="info-box-text">Password: <strong>123456789</strong></span>
+							<span class="info-box-text">SSID: <strong><?php echo $ssid; ?></strong></span>
+							<span class="info-box-text">Password: <strong><?php echo $pass; ?></strong></span>
 						</div>
 					  </div>
 					</div></a>

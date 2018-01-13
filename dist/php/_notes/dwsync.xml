@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
 <file name="check-online.php" server="C:/xampp/htdocs/router" local="131602600984268343" remote="131602600980000000" Dst="1" />
+<file name="connect-sql.php" server="C:/xampp/htdocs/router" local="131602865971399136" remote="131602865970000000" Dst="1" />
+<file name="get-admin-data.php" server="C:/xampp/htdocs/router" local="131602868625577293" remote="131602868620000000" Dst="1" />
+<file name="get-router-status.php" server="C:/xampp/htdocs/router" local="131602876195154792" remote="131602876190000000" Dst="1" />
+<file name="remove-bl.php" server="C:/xampp/htdocs/router" local="131602973469663792" remote="131602973460000000" Dst="1" />
+<file name="insert-bl.php" server="C:/xampp/htdocs/router" local="131602971756302133" remote="131602971750000000" Dst="1" />
 </dwsync>

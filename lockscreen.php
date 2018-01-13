@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<?php
+	include("dist/php/get-admin-data.php");
+?>
+
 <html>
 <head>
   <meta charset="utf-8">
@@ -32,13 +36,13 @@
     <a href="index2.html"><b>Pi</b>Router Admin</a>
   </div>
   <!-- User name -->
-  <div class="lockscreen-name"><?php echo "Administrator"; ?></div>
+  <div class="lockscreen-name"><?php echo $fullname; ?></div> <!--SELECT username FROM user ORDER BY id DESC LIMIT 1;-->
 
   <!-- START LOCK SCREEN ITEM -->
   <div class="lockscreen-item">
     <!-- lockscreen image -->
     <div class="lockscreen-image">
-      <img src="<?php echo "dist/img/user3-128x128.jpg"; ?>" alt="User Image">
+      <img src="<?php echo "dist/usr/" . $pic; ?>" alt="User Image">
     </div>
     <!-- /.lockscreen-image -->
 

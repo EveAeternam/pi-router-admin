@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<!--
-This is a starter template page. Use this page to start your new project from
-scratch. This page gets rid of all links and provides the needed markup only.
--->
+<?php
+	include("dist/php/get-admin-data.php");
+	if(isset($_GET["msg"])) $msg = htmlspecialchars($_GET["msg"]);
+	if(isset($_GET["msgtype"])) $msgtype = htmlspecialchars($_GET["msgtype"]);
+?>
 <html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>PiRouter | Starter</title>
+  <title>PiRouter | Parental Controls</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
@@ -33,26 +34,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
-<!--
-BODY TAG OPTIONS:
-=================
-Apply one or more of the following classes to get the
-desired effect
-|---------------------------------------------------------|
-| SKINS         | skin-blue                               |
-|               | skin-black                              |
-|               | skin-purple                             |
-|               | skin-yellow                             |
-|               | skin-red                                |
-|               | skin-green                              |
-|---------------------------------------------------------|
-|LAYOUT OPTIONS | fixed                                   |
-|               | layout-boxed                            |
-|               | layout-top-nav                          |
-|               | sidebar-collapse                        |
-|               | sidebar-mini                            |
-|---------------------------------------------------------|
--->
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
@@ -60,10 +41,8 @@ desired effect
   <header class="main-header">
 
     <!-- Logo -->
-    <a href="index2.html" class="logo">
-      <!-- mini logo for sidebar mini 50x50 pixels -->
+    <a href="index.php" class="logo">
       <span class="logo-mini">Pi<b>R</b></span>
-      <!-- logo for regular state and mobile devices -->
       <span class="logo-lg"><b>Pi</b>Router Admin</span>
     </a>
 
@@ -117,7 +96,7 @@ desired effect
 
                 <p>
                   Administrator
-                  <small>Frimware Version 0.1<br>(Evangeline Archer, January 18)</small>
+                  <small>Firmware Version 0.1<br>(Evangeline Archer, January 18)</small>
                 </p>
               </li>
               <!-- Menu Body -->
@@ -127,7 +106,7 @@ desired effect
                     <a href="#">Check for Updates</a>
                   </div>
                   <div class="col-xs-6 text-center">
-                    <a href="#">GitHub</a>
+                    <a href="https://github.com/EveAeternam/pi-router-admin">GitHub</a>
                   </div>
                 </div>
                 <!-- /.row -->
@@ -160,12 +139,13 @@ desired effect
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
+          <img src="<?php echo 'dist/usr/default.png'; ?>" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Administrator</p>
+          <p><?php echo 'Administrator'; ?></p>
           <!-- Status -->
-          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+          	<a href="#"><?php include('dist/php/check-online.php'); ?></a>
+			<a href="#"><?php echo '<i class="fa fa-circle text-success"></i> PHP Online'; ?></a>
         </div>
       </div>
 
@@ -185,16 +165,16 @@ desired effect
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">BASIC</li>
         <!-- Optionally, you can add icons to the links -->
-			<li><a href="#"><i class="fa fa-home"></i> <span>HOME</span></a></li>
-			<li><a href="#"><i class="fa fa-plug"></i> <span>INTERNET</span></a></li>
-			<li><a href="#"><i class="fa fa-wifi"></i> <span>WIRELESS</span></a></li>
-			<li><a href="#"><i class="fa fa-laptop"></i> <span>ATTACHED DEVICES</span></a></li>
+			<li><a href="index.php"><i class="fa fa-home"></i> <span>HOME</span></a></li>
+			<li><a href="internet.php"><i class="fa fa-plug"></i> <span>INTERNET</span></a></li>
+			<li><a href="wireless.php"><i class="fa fa-wifi"></i> <span>WIRELESS</span></a></li>
+			<li><a href="devices.php"><i class="fa fa-laptop"></i> <span>ATTACHED DEVICES</span></a></li>
 			<li class="active"><a href="#"><i class="fa fa-child"></i> <span>PARENTAL CONTROLS</span></a></li>
-			<li><a href="#"><i class="fa fa-plus"></i> <span>EXTRAS</span></a></li>
-			<li><a href="#"><i class="fa fa-wrench"></i> <span>HARDWARE</span></a></li>
+			<li><a href="extras.php"><i class="fa fa-plus"></i> <span>EXTRAS</span></a></li>
+			<li><a href="hardware.php"><i class="fa fa-wrench"></i> <span>HARDWARE</span></a></li>
 
 		  <li class="header">ADVANCED <i>(Coming Soon)</i></li>
-		  <li class="treeview">
+		  <!--<li class="treeview">
           <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
@@ -204,7 +184,7 @@ desired effect
             <li><a href="#">Link in level 2</a></li>
             <li><a href="#">Link in level 2</a></li>
           </ul>
-        </li>
+        </li>-->
       </ul>
       <!-- /.sidebar-menu -->
     </section>
@@ -233,7 +213,7 @@ desired effect
 				Parental Control is currently <strong>off</strong>.
 			</div>
 			<div class="col-xs-4 text-right">
-				<button type="button" class="btn btn-warning"><em class="fa fa-plus"></em> Add Website to Blacklist </button>
+				<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-add-bl"><em class="fa fa-plus"></em> Add Website to Blacklist </button>
 			</div>
 		</div>
 		
@@ -244,6 +224,34 @@ desired effect
 				<button type="button" class="btn btn-success"> Apply <em class="fa fa-check-circle"></em></button>
 			</center>
 		</div>
+		
+		<div class="modal fade" id="modal-add-bl">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title"><em class="fa fa-remove"></em> Add Website to Blacklist</h4>
+              </div>
+				<form action="dist/php/insert-bl.php" method="post">
+					  <div class="modal-body">
+						  <h4>Website URL</h4>
+						  <div class="input-group"><span class="input-group-addon"><strong>www</strong></span>
+							<input type="text" name="link" id="link" class="form-control" placeholder="http://www.that-crappy-site.com/">
+						</div>
+					  </div>
+					  <div class="modal-footer">
+						<button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancel</button>
+						<button type="submit" class="btn btn-danger">BLACKLIST</button>
+					  </div>
+				</form>
+            </div>
+            <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+		
 		<br>
 		<div class="box">
 			<div class="box-body">
@@ -274,24 +282,50 @@ desired effect
           </div>
         </div>
         <div class="box-body">
+			<?php
+				if (isset($msg) && isset($msgtype)) {
+					if ($msgtype == "success") {
+						echo '<div class="callout callout-success"><h4>Success!</h4><p>';
+						echo $msg;
+						echo '</p></div>';
+					} else if ($msgtype == "alert") {
+						echo '<div class="callout callout-danger"><h4>Error!</h4><p>';
+						echo $msg;
+						echo '</p></div>';
+					}
+				}
+			?>
           <table id="example2" class="table table-bordered table-hover">
                 <thead>
                 <tr>
                   <th>#</th>
                   <th>Website Name</th>
                   <th>IP Address</th>
-                  <th>MAC Address</th>
+				  <th>URL</th>
                   <th>Remove from Blacklist</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Test Website</td>
-                  <td>134.154.184.212</td>
-                  <td>12:34:56:78:90:AB</td>
-                  <td><button type="button" class="btn btn-danger"><em class="fa fa-trash"></em> Remove </button></td>
-                </tr>
+					<?php include("dist/php/connect-sql.php");
+					$sql = "SELECT * FROM `web-blacklist` WHERE 1";
+					$result = $conn->query($sql);
+
+					if ($result->num_rows > 0) {
+						$i = 1;
+						while($row = $result->fetch_assoc()) {
+							echo '<tr>';
+							echo '<td>' . $i . '</td>';
+							echo '<td>' . $row["title"] . '</td>';
+							echo '<td>' . $row["ip"] . '</td>';
+							echo '<td>' . $row["link"] . '</td>';
+							echo '<td>' . '<a href="dist/php/remove-bl.php?id=' . $row["id"] . '"><button type="button" class="btn btn-danger"><em class="fa fa-trash"></em> Remove </button></a>' . '</td>';
+							echo '</tr>';
+							$i++;
+						}
+					} else {
+						echo "There are no blacklisted websites :)<br>";
+					}
+					$conn->close();?>
                 </tfoot>
           </table>
         </div>
@@ -312,79 +346,6 @@ desired effect
     <strong>Evangeline Archer, 2017-2018 | <a href="#">EveAeternam</a></strong>
   </footer>
 
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Create the tabs -->
-    <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
-      <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
-      <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
-    </ul>
-    <!-- Tab panes -->
-    <div class="tab-content">
-      <!-- Home tab content -->
-      <div class="tab-pane active" id="control-sidebar-home-tab">
-        <h3 class="control-sidebar-heading">Recent Activity</h3>
-        <ul class="control-sidebar-menu">
-          <li>
-            <a href="javascript:;">
-              <i class="menu-icon fa fa-birthday-cake bg-red"></i>
-
-              <div class="menu-info">
-                <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
-
-                <p>Will be 23 on April 24th</p>
-              </div>
-            </a>
-          </li>
-        </ul>
-        <!-- /.control-sidebar-menu -->
-
-        <h3 class="control-sidebar-heading">Tasks Progress</h3>
-        <ul class="control-sidebar-menu">
-          <li>
-            <a href="javascript:;">
-              <h4 class="control-sidebar-subheading">
-                Custom Template Design
-                <span class="pull-right-container">
-                    <span class="label label-danger pull-right">70%</span>
-                </span>
-              </h4>
-
-              <div class="progress progress-xxs">
-                <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
-              </div>
-            </a>
-          </li>
-        </ul>
-        <!-- /.control-sidebar-menu -->
-
-      </div>
-      <!-- /.tab-pane -->
-      <!-- Stats tab content -->
-      <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
-      <!-- /.tab-pane -->
-      <!-- Settings tab content -->
-      <div class="tab-pane" id="control-sidebar-settings-tab">
-        <form method="post">
-          <h3 class="control-sidebar-heading">General Settings</h3>
-
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Report panel usage
-              <input type="checkbox" class="pull-right" checked>
-            </label>
-
-            <p>
-              Some information about this general settings option
-            </p>
-          </div>
-          <!-- /.form-group -->
-        </form>
-      </div>
-      <!-- /.tab-pane -->
-    </div>
-  </aside>
-  <!-- /.control-sidebar -->
   <!-- Add the sidebar's background. This div must be placed
   immediately after the control sidebar -->
   <div class="control-sidebar-bg"></div>

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="index.php" server="C:/xampp/htdocs/router" local="131602633391971085" remote="131602633390000000" Dst="1" />
-<file name="internet.php" server="C:/xampp/htdocs/router" local="131602633323343609" remote="131602633320000000" Dst="1" />
+<file name="index.php" server="C:/xampp/htdocs/router" local="131602879796164716" remote="131602879790000000" Dst="1" />
+<file name="internet.php" server="C:/xampp/htdocs/router" local="131602883504611124" remote="131602883500000000" Dst="1" />
 <file name="wireless.php" server="C:/xampp/htdocs/router" local="131602633487109050" remote="131602633480000000" Dst="1" />
 <file name="login.php" server="C:/xampp/htdocs/router" local="131602851903076924" remote="131602851900000000" Dst="1" />
-<file name="lockscreen.php" server="C:/xampp/htdocs/router" local="131602629119054613" remote="131602629110000000" Dst="1" />
+<file name="lockscreen.php" server="C:/xampp/htdocs/router" local="131602868674256730" remote="131602868670000000" Dst="1" />
+<file name="parental.php" server="C:/xampp/htdocs/router" local="131602961970827173" remote="131602961970000000" Dst="1" />
 </dwsync>
