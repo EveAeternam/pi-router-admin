@@ -2,7 +2,7 @@
 	include("connect-sql.php"); 
 
 // Escape user inputs for security
-if(isset($_GET["id"])) $id = htmlspecialchars($_GET["id"]);
+$id = isset($_GET["id"]) ? (int)$_GET["id"] : 0;
 
 $sql = "DELETE FROM `web-blacklist` WHERE id=$id";
 
@@ -17,5 +17,5 @@ $sql = "DELETE FROM `web-blacklist` WHERE id=$id";
 // Close connection
 $conn->close();
 
-header('Location: ../../parental.php?msgtype=' . $msgtype . '&msg=' . $msg);
+header('Location: ../../parental.php?msgtype=' . urlencode($msgtype) . '&msg=' . urlencode($msg));
 ?>

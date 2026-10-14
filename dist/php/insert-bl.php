@@ -25,7 +25,7 @@ if (filter_var($link, FILTER_VALIDATE_URL)) {
 	$ip = gethostbyname($linkhost . ".");
 	$title = get_title($link);
 	
-	$sqlcheck = "SELECT ip FROM `web-blacklist` WHERE ip='" . $ip . "'";
+	$sqlcheck = "SELECT ip FROM `web-blacklist` WHERE ip='" . $conn->real_escape_string($ip) . "'";
 	$result = $conn->query($sqlcheck);
 	
 	  if ($result->num_rows != 0)
@@ -35,7 +35,8 @@ if (filter_var($link, FILTER_VALIDATE_URL)) {
 	  } else {
 
 		// attempt insert query execution
-		$sql = "INSERT INTO `web-blacklist` (link, title, ip) VALUES ('$linkhost', '$title', '$ip')";
+		$sql = "INSERT INTO `web-blacklist` (link, title, ip) VALUES ('" . $conn->real_escape_string($linkhost) . "', '"
+			. $conn->real_escape_string((string)$title) . "', '" . $conn->real_escape_string($ip) . "')";
 		if($conn->query($sql) === true){
 			$msg = "Records inserted successfully for " . $title . " at ". $link . " (" . $ip . ").";
 			$msgtype = "success";
@@ -51,5 +52,5 @@ if (filter_var($link, FILTER_VALIDATE_URL)) {
 // Close connection
 $conn->close();
 
-header('Location: ../../parental.php?msgtype=' . $msgtype . '&msg=' . $msg);
+header('Location: ../../parental.php?msgtype=' . urlencode($msgtype) . '&msg=' . urlencode($msg));
 ?>

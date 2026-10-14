@@ -1,34 +1,36 @@
-## An Admin Dashboard to manage your Raspberry Pi as a Router!
-Better and more detailed ReadMe coming soon! (I promise)
+# Pi Router Admin
 
-In the meanwhile...
+A web dashboard design for running a Raspberry Pi as a home router, from January 2018.
 
-<a href="https://www.buymeacoffee.com/Evie" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/purple_img.png" alt="Buy Me A Coffee?" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
+**Status: prototype, not maintained.** The pages are laid out and styled, and a small PHP + MySQL back end (`dist/php/`) reads the admin profile, Wi-Fi settings and notifications from a database and lets you add and remove sites on the parental-controls blacklist. Nothing applies those settings to the Pi itself: there is no hostapd, DHCP or firewall integration.
 
-### Homepage
-![Image](docs/PiAdmin.png)
+The pages are PHP files built on the [AdminLTE 2.4](https://adminlte.io/) template (Bootstrap 3), which supplies the layout, styles and the libraries in `bower_components/`, `dist/` and `build/`.
 
-### Internet Configuration
-![Image](docs/PiInternet.PNG)
+## Pages
 
-### Wireless Configuration
-![Image](docs/PiWireless.PNG)
+| Page | File | Planned purpose |
+|---|---|---|
+| Home | `index.php` | Status at a glance |
+| Internet | `internet.php` | WAN connection settings |
+| Wireless | `wireless.php` | Wi-Fi network settings |
+| Devices | `devices.php` | Attached clients |
+| Parental controls | `parental.php` | Website blacklist |
+| Hardware | `hardware.php` | Board status |
+| Extras | `extras.php` | Other tools |
+| Login, lock screen | `login.php`, `lockscreen.php` | Sign-in |
 
-### Attached Devices
-![Image](docs/PiDevices.PNG)
+## Screenshots
 
-### Parental Controls / Website Blacklist
-![Image](docs/PiParental.PNG)
+| | |
+|---|---|
+| ![Home](docs/PiAdmin.png) | ![Internet](docs/PiInternet.PNG) |
+| ![Wireless](docs/PiWireless.PNG) | ![Devices](docs/PiDevices.PNG) |
+| ![Parental controls](docs/PiParental.PNG) | ![Hardware](docs/PiHardware.PNG) |
 
-### Extras
-![Image](docs/PiExtras.PNG)
+## Run it
+Needs PHP with `mysqli` and `curl`, and MySQL or MariaDB. Create a database named `pi-router`, import `dist/sql/pi-router.sql` (sample data), set the credentials in `dist/php/connect-sql.php`, then serve the folder (for example `php -S localhost:8000`) and open `index.php`.
 
-### Hardware
-![Image](docs/PiHardware.PNG)
+Prototype code: the sample admin password is an unsalted MD5 hash, and the blacklist fetches whatever URL it is given. Don't expose it to a network you don't trust.
 
-## Changelog
-
-### v0.1 - 1/10/2018
-Added all the pages without functionality using AdminLTE
-
-## Features to come
+## License
+MIT. The AdminLTE template is © 2014–2017 Abdullah Almsaeed, also MIT; see `LICENSE`.
